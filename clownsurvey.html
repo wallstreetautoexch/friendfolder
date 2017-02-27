@@ -1,0 +1,707 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+  <head>
+
+    <title>clownsurvey.html</title>
+    <meta charset = "UTF-8" />
+  </head>
+  <body>
+  <style>
+    body {
+    background:
+     url("https://image.shutterstock.com/z/stock-vector-big-top-circus-background-with-banner-illustration-of-cartoon-yellow-and-red-big-top-circus-tents-125392025.jpg")    /* image */
+     top center / 100% 100% /* position / size */
+     no-repeat                /* repeat */
+     fixed                    /* attachment */
+     padding-box              /* origin */
+     content-box;              /* clip */
+     /*red;                     /* color */*/
+      }
+    #formInput1     {
+
+               
+                height: 100px;
+                width:  800px;
+                margin-left: 45px;
+                border-bottom: solid;
+                border-left:   solid;
+                border-right:  solid;
+                border-top:    solid;
+  
+                
+
+    }  
+        .jumbotron {
+                 
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+    .panel-default  {
+                
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+    .panel-heading  {
+                
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+     /*.well  {
+                
+                padding-top: 10px;
+                padding-left: 45px;
+  
+                background-color: white;
+                /*background-color:rgba(255,0,0,0.5);*/
+                color: black;
+                width: 755px;
+                height:20px;
+                border-top: solid;
+                border-bottom: solid;
+                border-left: solid;
+                border-right: solid;
+              
+    }*/
+
+    .well1  {
+                
+                background-color:rgba(255,0,0,0.5);*/
+                color: white;
+                height: 100px;
+                width: 800px;
+                border-top: solid;
+                border-bottom: solid;
+
+    }
+
+    .well2  {
+                
+                padding-top: 40px;
+                padding-left: 50px;
+                
+    }
+
+    .filler  {
+               background-color:rgba(255,0,0,0.5);
+                width: 800px;
+                height: 10px;
+
+    }
+
+    #allClowns {
+    
+                background-color:rgba(255,0,0,0.5);
+                width: 850px;
+                height: 3500px;
+                margin-top: 10px;
+                margin-left: 45px;
+                border-left: solid;
+                border-right: solid;
+                border-top: solid;
+                border-bottom: solid;
+                padding-top: 10px;
+
+               
+                
+          
+    }
+
+
+    #allClownsPrint {
+
+          /*background-color:rgba(255,0,0,0.5);*/
+                width: 750px;
+                height: 3300px;
+                margin-left: 25px;
+                border-left: solid;
+                border-right: solid;
+                border-top: solid;
+                border-bottom: solid;
+
+                padding-top: 10px;
+                padding-left: 45px;
+  
+                background-color: white;
+                /*background-color:rgba(255,0,0,0.5);*/
+                color: black;
+                
+              
+
+          
+    }
+
+    #p11    {
+
+                     font: comic;
+                     font-size: 50px:;
+    }
+
+    #train-input-submit  {
+                
+                color: blue;
+              
+    }
+
+     #reloadIt  {
+                
+                float: right;
+                color: blue;
+              
+    }  
+
+
+    h1 {
+                
+                color: black;
+                padding-left: 250px;
+              
+    }
+
+
+
+    h2 {
+                
+                color: black;
+                padding-left: 150px;
+              
+    }
+
+   
+  img { width:  200px;
+        height: 200px;
+        margin-left: 200px
+      }  
+
+  p   {
+        font: Comic;
+        margin-left: 300px;
+  }
+
+  select {
+         height:20px;
+         float: right;
+         width:250px;
+
+
+         }
+
+  label   {
+
+        font: comic;
+        font-size: 30px;
+        /*padding-top: : 20px;*/
+        text-align: center;
+  }
+
+  fieldset  {
+
+        background-color:rgba(255,0,0,0.5);
+        font:comic;
+        font-size: 30px;
+        height:75px;
+        padding-bottom: 120px
+        text-align: center;
+        
+  }
+ 
+    </style>
+
+  <style>
+    
+  img { 
+        width:  200px;
+        height: 200px;
+      }
+
+  input { 
+        width:  400px;
+        height: 40px;
+      }
+
+  button  {
+            
+            width:1520px;
+            height:100px;
+            background-color: blue;
+            font: comic;
+            font-size: 50px;
+
+  }  
+  </style>
+
+    <h1>Clown Friend Survey</h1>
+
+    <div id=formInput class=well1>
+     <form class=well2>
+
+
+
+       Full Name:
+       <br>
+       <input type="text" id="fullName" placeholder="fullName" size=50 ></input>
+       <br>
+       Photo:
+       <br>
+       <input type="text" id="photo" placeholder="photo" maxlength=1000></input><br>
+        <br>
+        <br>
+       <fieldset>
+          <legend>Question 1</legend>
+          <p>
+             <label> You like to honk noses</label>
+            
+             <select id = "q1"  class="chosen-select" >
+              <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 2</legend>
+          <p>
+             <label>You Like Water Based Make Up</label>
+            
+             <select id = "q2"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 3</legend>
+          <p>
+             <label>You Wear Size 72 Shoes</label>
+            
+             <select id = "q3"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 4</legend>
+          <p>
+             <label>Horn Honks Turn You On </label>
+            
+             <select id = "q4"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 5</legend>
+          <p>
+             <label>Share A Compact Car With 50 Other People</label>
+            
+             <select id = "q5"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 6</legend>
+          <p>
+             <label> A Squirting Flower Is A Good Thing</label>
+            
+             <select id = "q6"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 7</legend>
+          <p>
+             <label> It Is Sad Ringling Brothers Circus is Closing</label>
+            
+             <select id = "q7"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 8</legend>
+          <p>
+             <label>Yellow Hair Does It For You</label>
+            
+             <select id = "q8"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 9</legend>
+          <p>
+             <label> Animals In Your Act</label>
+            
+             <select id = "q9"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       <fieldset>
+          <legend>Question 10</legend>
+          <p>
+             <label>Politicians Are Giving Clowns A Bad Name </label>
+            
+             <select id = "q10"  class="chosen-select" >
+               <option value=""></option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+             </select>
+          </p>
+       </fieldset>
+       
+       <br>
+       <br>
+       <br>
+       <button type="submit" class="submitform" id="submit">
+        Honk-Honk</button>
+    </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="writeOutput" >
+      <div id="writeOutput1"></div>
+      <div id="writeOutputImage"></div>
+      <div id="writeOutput2"></div>
+      <div id="writeOutputend"></div>
+    </div>
+
+      <!-- Modal -->
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+  <!-- <!--     <!-- Modal content-->
+      <!-- <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="http://images.uncyc.org/pt/6/67/Bozo77.JPG" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>   -->
+
+   <footer class="footer">
+        <div class="container">
+            <p><a href="/">API Clown Intoduction Page</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+        </div>
+      </footer>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    <script type="text/javascript"></script>
+     <!-- <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script> -->
+     <!-- <script type="text/javascript"> -->
+    <script>
+
+//------------------------------ Variables ------------------------------------
+    var nameForm = "";
+    var photoForm = "";
+    var counter = 0;
+    var answersForm = [];
+    var errorSwitch = "0";
+    var emt = [];
+    var errorMessegeTable = [];
+    var clownFriendsBack  = [];
+    var calculatedClownTable = [];
+    var calculatedClownScore = 0;
+    var result = 0;
+    var resultAbsoluteValue = 0
+    var errMessege = "";
+    var bestClownMatchName = "";
+    var bestClownMatchPhoto = "";
+    var bestClownMatchdifference = 0;
+  
+
+//-----------------------------  Functions -------------------------------------
+
+function initializeValues()  {
+  console.log("init")
+  $(writeOutput1).empty();
+  errorSwitch = "0";
+  emt.length = 0;
+  calculatedClownTable.length = 0;
+  answersForm.length = 0;
+  bestClownMatchName = "";
+  bestClownMatchPhoto = "";
+  bestClownMatchdifference = "";
+
+}
+
+
+function editTheClownForm()  {
+     console.log("edit")
+     answersForm.push($("#q1").val())
+     answersForm.push($("#q2").val())
+     answersForm.push($("#q3").val())
+     answersForm.push($("#q4").val())
+     answersForm.push($("#q5").val())
+     answersForm.push($("#q6").val())
+     answersForm.push($("#q7").val())
+     answersForm.push($("#q8").val())
+     answersForm.push($("#q9").val())
+     answersForm.push($("#q10").val())
+     console.log(answersForm)
+     counter = 0
+     if ($("#fullName").val() == "")
+         {
+          errMessege = "Name Input Missing"
+          emt.push(errMessege)
+          errorSwitch = "1"
+         };
+     if ($("#photo").val() == "")
+         {
+          errMessege = "Photo Input Missing"
+          emt.push(errMessege)
+          errorSwitch = "1"
+         };
+     for (i = 0; i < answersForm.length; i++)
+          {
+           if (answersForm[i] == "")
+             {
+              counter = i + 1
+              errMessege = "Answer Missing For Question" + counter 
+              emt.push(errMessege)
+              errorSwitch = "1"
+             }
+          }
+
+
+}
+
+function writeOutAllError() {
+  console.log("writeout")
+  $("#writeOutput1").append("<p id=p11>___________________Errors On Input ____________________</p>");
+
+  for (i = 0; i < emt.length; i++)
+          {
+           $("#writeOutput1").append("<p id=p11>Edit Input Error = " + emt[i] + "</p>")
+          }
+//$("#writeOutput2").append("<p>Answer From Form = " + answersForm[i] + "</p>")
+}
+
+function calculateAllClownsAnswers(index1,index2)    {
+
+         console.log("calc clowns answers")
+         console.log("idx1" + index1)
+         console.log("idx2" + index2)
+         if ((index1 >= 0) && (index1 <= 99)){
+         if (answersForm[index1] != clownFriendsBack[index1].scores[index2])
+            {
+             result = (answersForm[index1] - clownFriendsBack[index1].scores[index2])
+             resultAbsoluteValue = Math.abs(result)
+             calculatedClownScore = calculatedClownScore + resultAbsoluteValue
+            }
+
+         }
+
+
+
+
+}
+
+
+
+function getAllClowns()       {
+  console.log("get all clowns")
+  $.ajax({
+        type: 'GET',
+        url: '/api/clownfriends',
+        data: clownFriendsBack,
+        async: false
+      }).done(function(data){
+        
+
+      
+            console.log(data);
+            clownFriendsBack = data;
+            console.log("lenght of clowns back  " + clownFriendsBack.length)
+            for (i = 0; i < clownFriendsBack.length; i++)
+            // for (i = 0; i < 1; i++)  
+             {
+              calculatedClownScore = 0;
+              result = 0;
+              resultAbsoluteValue = 0
+              for (v = 0; v < 10; v++)
+               { 
+                 calculateAllClownsAnswers(i,v)
+               }
+                      
+              var userData = {
+                  name: clownFriendsBack[i].name,
+                  photo: clownFriendsBack[i].photo, 
+                  score: calculatedClownScore
+                  } 
+               console.log(userData)
+               // calculatedClownTable.push(calculatedClownScore)
+               calculatedClownTable[i] = userData
+               console.log("CCT Row = " + calculatedClownTable[i])
+             
+             } 
+       // }
+    })
+}
+
+
+
+function findBestClownMatch()         {
+
+        console.log("sort")
+        console.log("CCT = " + calculatedClownTable)
+        bestClownMatchdifference = calculatedClownTable[0].score;  
+        bestClownMatchName = calculatedClownTable[0].name;
+        bestClownMatchPhoto = calculatedClownTable[0].photo;
+        
+        // The John Bruno Sort starts here ---- I couldn t figure .sort out ------
+
+        for ( i=1; i < calculatedClownTable.length; i++)
+             { 
+               console.log("table value = " + calculatedClownTable[i].score)
+               console.log("compare To =  " + bestClownMatchdifference)
+               if (calculatedClownTable[i].score < bestClownMatchdifference)
+                {
+                 bestClownMatchdifference = calculatedClownTable[i].score;  
+                 bestClownMatchName = calculatedClownTable[i].name;
+                 bestClownMatchPhoto = calculatedClownTable[i].photo;
+                }
+             };
+
+
+}
+
+
+function openMatchedClownModal(userData1)      {
+
+    console.log("open the portal")
+     // Grab the URL of the website
+       var currentURL = window.location.origin;
+
+     // AJAX post the data to the friends API. 
+   //     $.post(currentURL + "/api/clown-survey", userData1, function(data){
+         $.post("/api/clown-survey", userData1, function(data){ 
+        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#matchName").text(bestClownMatchName);
+          $('#matchImg').attr("src", bestClownMatchPhoto);
+
+     // Show the modal with the best match 
+          $("#resultsModal").modal('toggle');
+
+        })
+
+
+
+}
+
+
+//------------------------------ Main Logic  -----------------------------------    
+      
+     $("#submit").on("click", function() {
+        event.preventDefault();
+        
+        initializeValues();
+        editTheClownForm();
+        console.log("switch" + errorSwitch)
+        console.log("EMT" + emt)
+
+        if (errorSwitch == "1")
+          {
+          writeOutAllError()
+          }
+        else
+          {
+            photoForm = $("#photo").val().trim()  
+        
+            answersForm.push($("#q1").val())
+            answersForm.push($("#q2").val())
+            answersForm.push($("#q3").val())
+            answersForm.push($("#q4").val())
+            answersForm.push($("#q5").val())
+            answersForm.push($("#q6").val())
+            answersForm.push($("#q7").val())
+            answersForm.push($("#q8").val())
+            answersForm.push($("#q9").val())
+            answersForm.push($("#q10").val())
+
+            getAllClowns()
+            calculateAllClownsAnswers()
+            findBestClownMatch()
+            console.log("Best Clown Match Name  " + bestClownMatchName)
+            console.log("Best Clown Match Photo " + bestClownMatchPhoto)
+            console.log("Best Clown Match Difference" + bestClownMatchdifference)
+            var userData1 = {
+                  name: bestClownMatchName,
+                  photo: bestClownMatchPhoto, 
+                  score: bestClownMatchdifference 
+                  } 
+            openMatchedClownModal(userData1)
+          }
+        
+        
+      
+      });
+     
+   
+
+  </script>
+
+  </body>
+</html>

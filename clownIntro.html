@@ -1,0 +1,215 @@
+<head>
+	<meta charset="UTF-8">
+	<title>FriendFinder</title>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome Glyphicons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<style>
+    body {
+    background:
+     url("https://image.shutterstock.com/z/stock-vector-big-top-circus-background-with-banner-illustration-of-cartoon-yellow-and-red-big-top-circus-tents-125392025.jpg")    /* image */
+     top center / 100% 100% /* position / size */
+     no-repeat                /* repeat */
+     fixed                    /* attachment */
+     padding-box              /* origin */
+     content-box;              /* clip */
+     /*red;                     /* color */*/
+      }
+    #formInput     {
+
+               
+                height: 100px;
+                width:  800px;
+                margin-left: 45px;
+                border-bottom: solid;
+                border-left:   solid;
+                border-right:  solid;
+                border-top:    solid;
+  
+                
+
+    }  
+        .jumbotron {
+                 
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+    .panel-default  {
+                
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+    .panel-heading  {
+                
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+     /*.well  {
+                
+                padding-top: 10px;
+                padding-left: 45px;
+  
+                background-color: white;
+                /*background-color:rgba(255,0,0,0.5);*/
+                color: black;
+                width: 755px;
+                height:20px;
+                border-top: solid;
+                border-bottom: solid;
+                border-left: solid;
+                border-right: solid;
+              
+    }*/
+
+    .well1  {
+                
+                background-color:rgba(255,0,0,0.5);*/
+                color: white;
+                height: 100px;
+                width: 800px;
+                border-top: solid;
+                border-bottom: solid;
+
+    }
+
+    .well2  {
+                
+                padding-top: 40px;
+                padding-left: 50px;
+                
+    }
+
+    .filler  {
+               background-color:rgba(255,0,0,0.5);
+                width: 800px;
+                height: 10px;
+
+    }
+
+    #allClowns {
+    
+                background-color:rgba(255,0,0,0.5);
+                width: 850px;
+                height: 3500px;
+                margin-top: 10px;
+                margin-left: 45px;
+                border-left: solid;
+                border-right: solid;
+                border-top: solid;
+                border-bottom: solid;
+                padding-top: 10px;
+
+               
+                
+          
+    }
+
+
+    #allClownsPrint {
+
+    			/*background-color:rgba(255,0,0,0.5);*/
+                width: 750px;
+                height: 3300px;
+                margin-left: 25px;
+                border-left: solid;
+                border-right: solid;
+                border-top: solid;
+                border-bottom: solid;
+
+                padding-top: 10px;
+                padding-left: 45px;
+  
+                background-color: white;
+                /*background-color:rgba(255,0,0,0.5);*/
+                color: black;
+                
+              
+
+          
+    }
+
+    #train-input-submit  {
+                
+                color: blue;
+              
+    }
+
+     #reloadIt  {
+                
+                float: right;
+                color: blue;
+              
+    }  
+
+
+    h1 {
+                
+                color: black;
+                padding-left: 250px;
+              
+    }
+
+
+
+    h2 {
+                
+                color: black;
+                padding-left: 150px;
+              
+    }
+
+   
+  img { width:  200px;
+        height: 200px;
+        margin-left: 200px
+      }  
+
+  p   {
+  	    font: Comic;
+  	    margin-left: 200px;
+  }
+ 
+    </style>
+
+
+	<div class="container">
+		
+		<div class="jumbotron">
+			<h1 class=""><i class="fa fa-facebook-square" aria-hidden="true"></i> Clown Friend Finder</h1>
+			<hr>
+			<h2 class="">Answer a few basic questions. </h2>
+			<h2 class="">Then find the Clown with the greatest compatibility!</h2>
+			<br>
+
+			<div class="">
+				<a href="/clown-survey"><button type="button" class="btn btn-lg btn-primary"><h4><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</h4></button></a>	
+			</div>
+
+		</div>
+
+	    
+
+	</div>
+
+	<footer class="footer">
+	      <div class="container">
+		        <p><a href="/get-the-clowns">API Clown Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+	      </div>
+	    </footer>
+
+	
+
+<div id="window-resizer-tooltip" style="display: none;"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1594</span> x <span class="tooltipHeight" id="winHeight">854</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">389</span> x <span class="tooltipHeight" id="vpHeight">761</span></div></body>
+</html>

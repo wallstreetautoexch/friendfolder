@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>All Clown Friends</h1>
+
+
+
+<div id=allClowns>
+  <h2>  -------------   Look At All These Clowns ------------- </h2>
+  <h2>                                                             </h2>
+  <div id=allClownsPrint class=well></div>
+</div>
+
+ <footer class="footer">
+          <div class="container">
+                <p><a href="/">API Clown Intro</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+          </div>
+        </footer>
+
+
+<style>
+    body {
+    background:
+     url("https://image.shutterstock.com/z/stock-vector-big-top-circus-background-with-banner-illustration-of-cartoon-yellow-and-red-big-top-circus-tents-125392025.jpg")    /* image */
+     top center / 100% 100% /* position / size */
+     no-repeat                /* repeat */
+     fixed                    /* attachment */
+     padding-box              /* origin */
+     content-box;              /* clip */
+     /*red;                     /* color */*/
+      }
+    #formInput     {
+
+               
+                height: 100px;
+                width:  800px;
+                margin-left: 45px;
+                border-bottom: solid;
+                border-left:   solid;
+                border-right:  solid;
+                border-top:    solid;
+  
+                
+
+    }  
+        .jumbotron {
+                 
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+    .panel-default  {
+                
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+    .panel-heading  {
+                
+                color: white;
+                background-color:rgba(255,0,0,0.5); 
+    }
+
+     /*.well  {
+                
+                padding-top: 10px;
+                padding-left: 45px;
+  
+                background-color: white;
+                /*background-color:rgba(255,0,0,0.5);*/
+                color: black;
+                width: 755px;
+                height:20px;
+                border-top: solid;
+                border-bottom: solid;
+                border-left: solid;
+                border-right: solid;
+              
+    }*/
+
+    .well1  {
+                
+                background-color:rgba(255,0,0,0.5);*/
+                color: white;
+                height: 100px;
+                width: 800px;
+                border-top: solid;
+                border-bottom: solid;
+
+    }
+
+    .well2  {
+                
+                padding-top: 40px;
+                padding-left: 50px;
+                
+    }
+
+    .filler  {
+               background-color:rgba(255,0,0,0.5);
+                width: 800px;
+                height: 10px;
+
+    }
+
+    #allClowns {
+    
+                background-color:rgba(255,0,0,0.5);
+                width: 850px;
+                height: 3500px;
+                margin-top: 10px;
+                margin-left: 45px;
+                border-left: solid;
+                border-right: solid;
+                border-top: solid;
+                border-bottom: solid;
+                padding-top: 10px;
+
+               
+                
+          
+    }
+
+
+    #allClownsPrint {
+
+    			/*background-color:rgba(255,0,0,0.5);*/
+                width: 750px;
+                height: 3300px;
+                margin-left: 25px;
+                border-left: solid;
+                border-right: solid;
+                border-top: solid;
+                border-bottom: solid;
+
+                padding-top: 10px;
+                padding-left: 45px;
+  
+                background-color: white;
+                /*background-color:rgba(255,0,0,0.5);*/
+                color: black;
+                
+              
+
+          
+    }
+
+    #train-input-submit  {
+                
+                color: blue;
+              
+    }
+
+     #reloadIt  {
+                
+                float: right;
+                color: blue;
+              
+    }  
+
+
+    h1 {
+                
+                color: black;
+                padding-left: 250px;
+              
+    }
+
+
+
+    h2 {
+                
+                color: black;
+                padding-left: 150px;
+              
+    }
+
+   
+  img { width:  200px;
+        height: 200px;
+        margin-left: 200px
+      }  
+
+  p   {
+  	    font: Comic;
+  	    margin-left: 200px;
+  }
+ 
+    </style>
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+
+var clownFriendsBack = [];
+
+
+function getAllClownFriends () {
+
+	$.ajax({
+		    type: 'GET',
+		    url: '/api/clownfriends',
+		    data: clownFriendsBack,
+		    success: function(data){
+
+		        console.log(data);
+		        clownFriendsBack = data;
+		        for (i = 0; i < clownFriendsBack.length; i++)
+		        {
+		          $("#allClownsPrint").append("<p>Full Name :     "
+		          	+ clownFriendsBack[i].name) + "</p>"
+		          $("#allClownsPrint").append("<p>       Photo      </p>")
+		          var imageOfClown = $("<img>").addClass("carImage").attr("src","" + clownFriendsBack[i].photo + "");
+		          $("#allClownsPrint").append(imageOfClown)
+		          $("#allClownsPrint").append("<p>-------------------------------------------------------------------------</p>")
+		          
+	             }    
+		       }
+            });
+
+        }
+
+	getAllClownFriends();
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

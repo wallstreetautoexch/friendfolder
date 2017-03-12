@@ -230,6 +230,52 @@
             font-size: 50px;
 
   }  
+
+  /*.hidden {
+    display: none;
+  }
+  .show {
+    display: block;
+  }*/
+
+   /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
   </style>
 
     <h1>Clown Friend Survey</h1>
@@ -418,27 +464,20 @@
       <div id="writeOutputend"></div>
     </div>
 
-      <!-- Modal -->
-  <div id="resultsModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
 
-  <!-- <!--     <!-- Modal content-->
-      <!-- <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">×</button>
-          <h2 class="modal-title"><strong>Best Match</strong></h2>
-        </div>
-        <div class="modal-body">
-          <h2 id="matchName"></h2>
-          <img id="matchImg" src="http://images.uncyc.org/pt/6/67/Bozo77.JPG" alt="">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+  <div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-content2"></div>
+    <div class="modal-content3">
+       <!-- <button class="pharmacyUpdate">Update This Doctor</button> -->
+       <p></p>
     </div>
-  </div>   -->
+  </div>
+
+</div>
 
    <footer class="footer">
         <div class="container">
@@ -629,23 +668,70 @@ function findBestClownMatch()         {
 }
 
 
-function openMatchedClownModal(userData1)      {
+function openMatchedClownModal()      {
 
-    console.log("open the portal")
-     // Grab the URL of the website
-       var currentURL = window.location.origin;
+          console.log("Modal")
+  //---------Populates The Modal with Detail Informatin About the Prescription-----------
 
-     // AJAX post the data to the friends API. 
-   //     $.post(currentURL + "/api/clown-survey", userData1, function(data){
-         $.post("/api/clown-survey", userData1, function(data){ 
-        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-          $("#matchName").text(bestClownMatchName);
-          $('#matchImg').attr("src", bestClownMatchPhoto);
+         $(".modal-content2").empty() 
+         $(".modal-content2").append("<p>       Photo      </p>")
+         var imageOfClown = $("<img>").addClass("carImage").attr("src","" + bestClownMatchPhoto + "");
+               
+         $(".modal-content2").append(imageOfClown);
+         $(".modal-content2").append(bestClownMatchName);     
+        //      createNewButton ()
+                
+//---------------------------- Get the modal--------------------------------------
+           
 
-     // Show the modal with the best match 
-          $("#resultsModal").modal('toggle');
+               var modal = document.getElementById('myModal');
 
-        })
+            
+              
+
+//-------------------- Get the button that opens the modal------------------------
+// ------------------- NOT USING THIS BUTTON TO OPEN MODAL------------------------
+
+               var btn = document.getElementById("myBtn");
+
+//-------------------- Get the <span> element that closes the modal---------------
+         
+                 var span = document.getElementsByClassName("close")[0];
+
+//----- When the user clicks on the button, open the modal(NOT USING THIS BUTTON)--- 
+                  // btn.onclick = function() {
+
+// ----------------- Automatically Opens The Modal -----------------------------
+                   console.log("open Modal")
+                   $(document).ready(function () {
+                          modal.style.display = "block";
+                  });
+//------------------- Inside the Modal You can  Click to update this Record ----
+
+                // $(document).on("click",".pharmacyUpdate",function()  {         
+                //      event.preventDefault();
+                //      console.log("the Prescription is  " + prescriptionIs)
+
+                //    })
+
+//----------- Inside the Modal you can Close The Modal By Clicking on the x -----
+
+                  span.onclick = function() {
+                    event.preventDefault();
+                     modal.style.display = "none";
+                    //$(".modal-content").close()
+                    // $.modal.close();
+                    }
+
+// ------------ Or You Can Click Anywhere Outside the Modal to Close it ------------
+
+                   window.onclick = function(event) {
+                   if (event.target == modal) {
+                        modal.style.display = "none";
+                       //$(".modal-content").close()
+                       // $.modal.close();
+                      }
+                   }
 
 
 
@@ -687,12 +773,8 @@ function openMatchedClownModal(userData1)      {
             console.log("Best Clown Match Name  " + bestClownMatchName)
             console.log("Best Clown Match Photo " + bestClownMatchPhoto)
             console.log("Best Clown Match Difference" + bestClownMatchdifference)
-            var userData1 = {
-                  name: bestClownMatchName,
-                  photo: bestClownMatchPhoto, 
-                  score: bestClownMatchdifference 
-                  } 
-            openMatchedClownModal(userData1)
+          
+            openMatchedClownModal()
           }
         
         
